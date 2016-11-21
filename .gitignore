@@ -1,0 +1,17 @@
+### Node ###
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory
+coverage
+
+# Dependency directory
+node_modules
+
+# Users Environment Variables
+.lock-wscript
+
+# REPL history
+.node_repl_history

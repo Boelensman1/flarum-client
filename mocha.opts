@@ -1,0 +1,5 @@
+-R spec
+--wait 5000
+--timeout 10000
+--require=env-test
+--require mocha-clean
