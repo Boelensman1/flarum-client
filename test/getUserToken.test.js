@@ -7,11 +7,7 @@ chai.use(require('chai-as-promised'));
 const expect = chai.expect;
 chai.config.includeStack = true;
 
-const settings = {
-  apiUrl: 'http://community.space-s.nl/forum/api',
-  adminUsername: 'Server',
-  adminPassword: 'tJcf4acXLKgb',
-};
+const settings = require('./settings.json');
 const flarumClient = require('../').init(settings);
 
 const getUserToken = flarumClient.getUserToken;
