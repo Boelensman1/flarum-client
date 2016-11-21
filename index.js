@@ -11,10 +11,13 @@ const flarumClient = {
     if (loggerConfig) {
       logger = loggerConfig;
     } else {
+      /* eslint-disable no-console */
       logger = {
+        error: console.error,
         debug: () => {},
         info: () => {},
       };
+      /* eslint-enable */
     }
 
     flarumClient.createUser = createUser.bind(null, config, logger);
