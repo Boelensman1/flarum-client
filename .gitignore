@@ -18,3 +18,4 @@ node_modules
 
 # private files
 test/settings.json
+/docs

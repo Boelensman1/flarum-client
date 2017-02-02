@@ -18,7 +18,8 @@
     "test": "mocha $(find ./test -name '*.test.js')",
     "test:watch": "nodemon  --exec 'npm run test --silent'",
     "coverage": "istanbul cover _mocha -- $(find ./test -name '*.test.js')",
-    "coverage:watch": "nodemon --exec 'npm run coverage --silent'"
+    "coverage:watch": "nodemon --exec 'npm run coverage --silent'",
+    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "dependencies": {
     "node-cache": "^4.1.0",
@@ -30,8 +31,10 @@
     "chai-as-promised": "^6.0.0",
     "chai-datetime": "^1.4.1",
     "chai-things": "^0.2.0",
+    "docdash": "^0.4.0",
     "env-test": "^1.0.0",
     "istanbul": "^0.4.5",
+    "jsdoc": "^3.4.3",
     "mocha": "^3.1.2",
     "mocha-clean": "^1.0.0",
     "nodemon": "^1.11.0"
