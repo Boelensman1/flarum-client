@@ -1,4 +1,9 @@
-const flarumClient = { init }; // eslint-disable-line no-use-before-define
+const createUser = require('./lib/createUser');
+const getUserToken = require('./lib/getUserToken');
+const patchUser = require('./lib/patchUser');
+const deleteUser = require('./lib/deleteUser');
+const getUser = require('./lib/getUser');
+const changeAvatarUser = require('./lib/changeAvatarUser');
 
 /**
  * Initialise the flarum client, overwrites flarum client therefore after
@@ -13,14 +18,7 @@ const flarumClient = { init }; // eslint-disable-line no-use-before-define
  * @param {object} loggerConfig Optional, a bunyan logger object
  * @returns {object} The flarumclient instance
  */
-function init(config, loggerConfig) {
-  const createUser = require('./lib/createUser');
-  const getUserToken = require('./lib/getUserToken');
-  const patchUser = require('./lib/patchUser');
-  const deleteUser = require('./lib/deleteUser');
-  const getUser = require('./lib/getUser');
-  const changeAvatarUser = require('./lib/changeAvatarUser');
-
+function FlarumClient(config, loggerConfig) {
   let logger;
   if (loggerConfig) {
     logger = loggerConfig;
@@ -34,13 +32,13 @@ function init(config, loggerConfig) {
     /* eslint-enable */
   }
 
-  flarumClient.createUser = createUser.bind(null, config, logger);
-  flarumClient.getUserToken = getUserToken.bind(null, config, logger);
-  flarumClient.patchUser = patchUser.bind(null, config, logger);
-  flarumClient.deleteUser = deleteUser.bind(null, config, logger);
-  flarumClient.getUser = getUser.bind(null, config, logger);
-  flarumClient.changeAvatarUser = changeAvatarUser.bind(null, config, logger);
-  return flarumClient;
+  this.createUser = createUser.bind(null, config, logger);
+  this.getUserToken = getUserToken.bind(null, config, logger);
+  this.patchUser = patchUser.bind(null, config, logger);
+  this.deleteUser = deleteUser.bind(null, config, logger);
+  this.getUser = getUser.bind(null, config, logger);
+  this.changeAvatarUser = changeAvatarUser.bind(null, config, logger);
+  return this;
 }
 
-module.exports = flarumClient;
+module.exports = FlarumClient;

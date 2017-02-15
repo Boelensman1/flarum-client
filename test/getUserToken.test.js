@@ -8,19 +8,23 @@ const expect = chai.expect;
 chai.config.includeStack = true;
 
 const settings = require('./settings.json');
-const flarumClient = require('../').init(settings);
-
-const getUserToken = flarumClient.getUserToken;
+const FlarumClient = require('../');
 
 describe('flarumClient', () => {
   describe('getUserToken', () => {
+    let flarumClient;
+    beforeEach(() => {
+      flarumClient = new FlarumClient(settings);
+    });
+
     it('Should refuse giving a token', () => {
+      const getUserToken = flarumClient.getUserToken;
       const userTokenPromise = getUserToken('WrongName', 'WrongPass');
       return expect(userTokenPromise).to.rejectedWith({});
     });
 
     it('Should give a token', () => {
-      const userTokenPromise = getUserToken(
+      const userTokenPromise = flarumClient.getUserToken(
         settings.adminUsername,
         settings.adminPassword
       );

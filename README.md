@@ -5,20 +5,22 @@ A simple client to the [flarum forum software](http://flarum.org/) api.
 First include the flarum client and initialise it.
 
 ```
+const FlarumClient = require('flarumClient');
+
 const settings = {
   "apiUrl": "http://example.org/api",
   "adminUsername": "username", // you will need to create an account with admin privileges on flarum
   "adminPassword": "password"
 }
-const flarumClient = require('../').init(settings);
+const flarumClient = new FlarumClient(settings);
 ```
 
 ### logging
 If you want better logging, you can install bunyan and pass an instance to the init, like this:
 ```
-var bunyan = require('bunyan');
-var logger = bunyan.createLogger({name: "myapp"});
-const flarumClient = require('../').init(settings, logger);
+const bunyan = require('bunyan');
+const logger = bunyan.createLogger({name: "myapp"});
+const flarumClient = new FlarumClient(settings, logger);
 ```
 
 ### Documentation of functions
