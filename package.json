@@ -20,7 +20,8 @@
     "test:watch": "nodemon  --exec 'npm run test --silent'",
     "coverage": "istanbul cover _mocha -- $(find ./test -name '*.test.js')",
     "coverage:watch": "nodemon --exec 'npm run coverage --silent'",
-    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json",
+    "deploy-docs": "node ./deploy-docs.js"
   },
   "dependencies": {
     "node-cache": "^4.1.0",
