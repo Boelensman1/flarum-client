@@ -339,7 +339,7 @@
 
     
 
-    <h4 class="name" id="createUser"><span class="type-signature"></span>createUser<span class="signature">(settings, logger, username, password, email, bio)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id="createUser"><span class="type-signature"></span>createUser<span class="signature">(username, password, email, bio)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
@@ -351,7 +351,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_createUser.js.html">lib/createUser.js</a>, <a href="lib_createUser.js.html#line21">line 21</a>
+        <a href="lib_createUser.js.html">lib/createUser.js</a>, <a href="lib_createUser.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -425,52 +425,6 @@
     </thead>
 
     <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>settings</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The flarum settings</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>logger</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Logger object, from restify</p></td>
-        </tr>
-
     
 
         <tr>
@@ -610,7 +564,7 @@
 
     
 
-    <h4 class="name" id="deleteUser"><span class="type-signature"></span>deleteUser<span class="signature">(settings, logger, userId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id="deleteUser"><span class="type-signature"></span>deleteUser<span class="signature">(userId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
@@ -622,7 +576,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_deleteUser.js.html">lib/deleteUser.js</a>, <a href="lib_deleteUser.js.html#line14">line 14</a>
+        <a href="lib_deleteUser.js.html">lib/deleteUser.js</a>, <a href="lib_deleteUser.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -700,52 +654,6 @@
 
         <tr>
             
-                <td class="name"><code>settings</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The flarum settings</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>logger</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Logger object, from restify</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>userId</code></td>
             
 
@@ -811,7 +719,7 @@
 
     
 
-    <h4 class="name" id="FlarumClient"><span class="type-signature"></span>FlarumClient<span class="signature">(config, loggerConfig)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="FlarumClient"><span class="type-signature"></span>FlarumClient<span class="signature">(settings, logger)</span><span class="type-signature"> &rarr; {object}</span></h4>
 
     
 
@@ -823,7 +731,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line21">line 21</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -863,8 +771,7 @@
 
 
 <div class="description">
-    <p>Initialise the flarum client, overwrites flarum client therefore after
-running init once you can just require flarumClient</p>
+    <p>Constructor for the flarum client</p>
 </div>
 
 
@@ -902,7 +809,7 @@ running init once you can just require flarumClient</p>
 
         <tr>
             
-                <td class="name"><code>config</code></td>
+                <td class="name"><code>settings</code></td>
             
 
             <td class="type">
@@ -930,7 +837,7 @@ running init once you can just require flarumClient</p>
 
         <tr>
             
-                <td class="name"><code>loggerConfig</code></td>
+                <td class="name"><code>logger</code></td>
             
 
             <td class="type">
@@ -995,7 +902,7 @@ running init once you can just require flarumClient</p>
 
     
 
-    <h4 class="name" id="getUser"><span class="type-signature"></span>getUser<span class="signature">(settings, logger, userName)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id="getUser"><span class="type-signature"></span>getUser<span class="signature">(userName)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
@@ -1007,7 +914,7 @@ running init once you can just require flarumClient</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_getUser.js.html">lib/getUser.js</a>, <a href="lib_getUser.js.html#line14">line 14</a>
+        <a href="lib_getUser.js.html">lib/getUser.js</a>, <a href="lib_getUser.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -1085,52 +992,6 @@ running init once you can just require flarumClient</p>
 
         <tr>
             
-                <td class="name"><code>settings</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The flarum settings</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>logger</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Logger object, from restify</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>userName</code></td>
             
 
@@ -1196,7 +1057,7 @@ running init once you can just require flarumClient</p>
 
     
 
-    <h4 class="name" id="getUserToken"><span class="type-signature"></span>getUserToken<span class="signature">(settings, logger, username, password)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id="getUserToken"><span class="type-signature"></span>getUserToken<span class="signature">(username, password)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
@@ -1208,7 +1069,7 @@ running init once you can just require flarumClient</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_getUserToken.js.html">lib/getUserToken.js</a>, <a href="lib_getUserToken.js.html#line13">line 13</a>
+        <a href="lib_getUserToken.js.html">lib/getUserToken.js</a>, <a href="lib_getUserToken.js.html#line11">line 11</a>
     </li></ul></dd>
     
 
@@ -1282,52 +1143,6 @@ running init once you can just require flarumClient</p>
     </thead>
 
     <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>settings</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The flarum settings</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>logger</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Logger object, from restify</p></td>
-        </tr>
-
     
 
         <tr>
@@ -1420,7 +1235,7 @@ running init once you can just require flarumClient</p>
 
     
 
-    <h4 class="name" id="patchUser"><span class="type-signature"></span>patchUser<span class="signature">(settings, logger, data, userId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id="patchUser"><span class="type-signature"></span>patchUser<span class="signature">(data, userId)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
 
     
 
@@ -1432,7 +1247,7 @@ running init once you can just require flarumClient</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_patchUser.js.html">lib/patchUser.js</a>, <a href="lib_patchUser.js.html#line16">line 16</a>
+        <a href="lib_patchUser.js.html">lib/patchUser.js</a>, <a href="lib_patchUser.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -1506,52 +1321,6 @@ running init once you can just require flarumClient</p>
     </thead>
 
     <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>settings</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The flarum settings</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>logger</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Logger object, from restify</p></td>
-        </tr>
-
     
 
         <tr>
@@ -1657,7 +1426,7 @@ running init once you can just require flarumClient</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Feb 15 2017 18:47:21 GMT+0100 (CET) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sat Feb 18 2017 17:13:08 GMT+0100 (CET) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
