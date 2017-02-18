@@ -10,26 +10,24 @@ chai.config.includeStack = true;
 const settings = require('./settings.json');
 const FlarumClient = require('../');
 
-describe('flarumClient', () => {
-  describe('getUserToken', () => {
-    let flarumClient;
-    beforeEach(() => {
-      flarumClient = new FlarumClient(settings);
-    });
+describe('getUserToken', () => {
+  let flarumClient;
+  beforeEach(() => {
+    flarumClient = new FlarumClient(settings);
+  });
 
-    it('Should refuse giving a token', () => {
-      const getUserToken = flarumClient.getUserToken;
-      const userTokenPromise = getUserToken('WrongName', 'WrongPass');
-      return expect(userTokenPromise).to.rejectedWith({});
-    });
+  it('Should refuse giving a token', () => {
+    const getUserToken = flarumClient.getUserToken;
+    const userTokenPromise = getUserToken('WrongName', 'WrongPass');
+    return expect(userTokenPromise).to.rejectedWith({});
+  });
 
-    it('Should give a token', () => {
-      const userTokenPromise = flarumClient.getUserToken(
-        settings.adminUsername,
-        settings.adminPassword
-      );
-      return expect(userTokenPromise).to.eventually.have.property('token')
-        .and.to.have.length(40);
-    });
+  it('Should give a token', () => {
+    const userTokenPromise = flarumClient.getUserToken(
+      settings.adminUsername,
+      settings.adminPassword
+    );
+    return expect(userTokenPromise).to.eventually.have.property('token')
+      .and.to.have.length(40);
   });
 });

@@ -1,44 +1,41 @@
-const createUser = require('./lib/createUser');
-const getUserToken = require('./lib/getUserToken');
-const patchUser = require('./lib/patchUser');
-const deleteUser = require('./lib/deleteUser');
-const getUser = require('./lib/getUser');
-const changeAvatarUser = require('./lib/changeAvatarUser');
-
 /**
- * Initialise the flarum client, overwrites flarum client therefore after
- * running init once you can just require flarumClient
+ * Constructor for the flarum client
  *
- * @param {object} config The config object, should look like this
+ * @param {object} settings The config object, should look like this
  * {
  *   "apiUrl": "http://example.org/api ",
  *   "adminUsername": "username",
  *   "adminPassword": "password"
  * }
- * @param {object} loggerConfig Optional, a bunyan logger object
+ * @param {object} logger Optional, a bunyan logger object
  * @returns {object} The flarumclient instance
  */
-function FlarumClient(config, loggerConfig) {
-  let logger;
-  if (loggerConfig) {
-    logger = loggerConfig;
+function FlarumClient(settings, logger) { // eslint-disable-line require-jsdoc
+  // save config
+  this.settings = settings;
+
+  if (logger) {
+    this.logger = logger;
   } else {
     /* eslint-disable no-console */
-    logger = {
+    this.logger = {
       error: console.error,
       debug: () => {},
       info: () => {},
     };
     /* eslint-enable */
   }
-
-  this.createUser = createUser.bind(null, config, logger);
-  this.getUserToken = getUserToken.bind(null, config, logger);
-  this.patchUser = patchUser.bind(null, config, logger);
-  this.deleteUser = deleteUser.bind(null, config, logger);
-  this.getUser = getUser.bind(null, config, logger);
-  this.changeAvatarUser = changeAvatarUser.bind(null, config, logger);
-  return this;
 }
+
+// class methods
+FlarumClient.prototype = {
+  createUser: require('./lib/createUser'),
+  getUserToken: require('./lib/getUserToken'),
+  getUser: require('./lib/getUser'),
+  patchUser: require('./lib/patchUser'),
+  deleteUser: require('./lib/deleteUser'),
+  changeAvatarUser: require('./lib/changeAvatarUser'),
+  getAuthorization: require('./lib/util/getAuthorization'),
+};
 
 module.exports = FlarumClient;

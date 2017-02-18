@@ -1,6 +1,6 @@
 {
   "name": "flarum-client",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A simple client to the api of the flarum forum",
   "keywords": [
     "flarum",
