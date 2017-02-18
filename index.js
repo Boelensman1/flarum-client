@@ -1,6 +1,7 @@
 /**
  * Constructor for the flarum client
  *
+ * @class
  * @param {object} settings The config object, should look like this
  * {
  *   "apiUrl": "http://example.org/api ",
